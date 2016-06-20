@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+}
+.wrapper{
+    width: 960px;
+     margin:0 auto;
+}
+.wrapper div{
+   display: inline-block; 
+}
+
+.right{
+    float: right;
+}
