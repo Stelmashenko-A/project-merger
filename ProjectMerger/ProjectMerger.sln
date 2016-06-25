@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMerger", "ProjectMerger\ProjectMerger.csproj", "{6ABF74C7-A0D7-4BEA-B508-0EE5C13C3D5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMerger.Security", "ProjectMerger.Security\ProjectMerger.Security.csproj", "{091F42A8-580D-4B8B-87BD-017A47B27604}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMerger.Web.Client", "ProjectMerger.Web.Client\ProjectMerger.Web.Client.csproj", "{C24348D9-2615-491E-81FA-1FDF3D76D252}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMerger.Security.Data", "ProjectMerger.Security.Data\ProjectMerger.Security.Data.csproj", "{2BCF7F80-AB09-44DB-9024-78D04058BF6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMerger.Web.Api", "ProjectMerger.Web.Api\ProjectMerger.Web.Api.csproj", "{EA7CA773-F432-475D-A1D5-AC245930E63E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6ABF74C7-A0D7-4BEA-B508-0EE5C13C3D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6ABF74C7-A0D7-4BEA-B508-0EE5C13C3D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6ABF74C7-A0D7-4BEA-B508-0EE5C13C3D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6ABF74C7-A0D7-4BEA-B508-0EE5C13C3D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{091F42A8-580D-4B8B-87BD-017A47B27604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{091F42A8-580D-4B8B-87BD-017A47B27604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{091F42A8-580D-4B8B-87BD-017A47B27604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{091F42A8-580D-4B8B-87BD-017A47B27604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C24348D9-2615-491E-81FA-1FDF3D76D252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C24348D9-2615-491E-81FA-1FDF3D76D252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C24348D9-2615-491E-81FA-1FDF3D76D252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C24348D9-2615-491E-81FA-1FDF3D76D252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BCF7F80-AB09-44DB-9024-78D04058BF6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BCF7F80-AB09-44DB-9024-78D04058BF6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BCF7F80-AB09-44DB-9024-78D04058BF6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BCF7F80-AB09-44DB-9024-78D04058BF6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA7CA773-F432-475D-A1D5-AC245930E63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA7CA773-F432-475D-A1D5-AC245930E63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA7CA773-F432-475D-A1D5-AC245930E63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA7CA773-F432-475D-A1D5-AC245930E63E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

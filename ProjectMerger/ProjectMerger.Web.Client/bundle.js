@@ -48,8 +48,8 @@
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
-	__webpack_require__(221);
-	var Header = __webpack_require__(225);
+	__webpack_require__(159);
+	var Header = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./modules/header/header\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	ReactDOM.render(React.createElement(Header, null), document.getElementById('root'));
 
 /***/ },
@@ -212,6 +212,31 @@
 	// shim for using process in browser
 
 	var process = module.exports = {};
+
+	// cached from whatever global is present so that test runners that stub it
+	// don't break things.  But we need to wrap it in a try catch in case it is
+	// wrapped in strict mode code which doesn't define any globals.  It's inside a
+	// function because try/catches deoptimize in certain engines.
+
+	var cachedSetTimeout;
+	var cachedClearTimeout;
+
+	(function () {
+	    try {
+	        cachedSetTimeout = setTimeout;
+	    } catch (e) {
+	        cachedSetTimeout = function cachedSetTimeout() {
+	            throw new Error('setTimeout is not defined');
+	        };
+	    }
+	    try {
+	        cachedClearTimeout = clearTimeout;
+	    } catch (e) {
+	        cachedClearTimeout = function cachedClearTimeout() {
+	            throw new Error('clearTimeout is not defined');
+	        };
+	    }
+	})();
 	var queue = [];
 	var draining = false;
 	var currentQueue;
@@ -236,7 +261,7 @@
 	    if (draining) {
 	        return;
 	    }
-	    var timeout = setTimeout(cleanUpNextTick);
+	    var timeout = cachedSetTimeout(cleanUpNextTick);
 	    draining = true;
 
 	    var len = queue.length;
@@ -253,7 +278,7 @@
 	    }
 	    currentQueue = null;
 	    draining = false;
-	    clearTimeout(timeout);
+	    cachedClearTimeout(timeout);
 	}
 
 	process.nextTick = function (fun) {
@@ -265,7 +290,7 @@
 	    }
 	    queue.push(new Item(fun, args));
 	    if (queue.length === 1 && !draining) {
-	        setTimeout(drainQueue, 0);
+	        cachedSetTimeout(drainQueue, 0);
 	    }
 	};
 
@@ -19714,78 +19739,16 @@
 	module.exports = __webpack_require__(3);
 
 /***/ },
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(222);
+	var content = __webpack_require__(160);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(224)(content, {});
+	var update = __webpack_require__(162)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -19802,10 +19765,10 @@
 	}
 
 /***/ },
-/* 222 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(223)();
+	exports = module.exports = __webpack_require__(161)();
 	// imports
 
 
@@ -19816,7 +19779,7 @@
 
 
 /***/ },
-/* 223 */
+/* 161 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -19871,7 +19834,7 @@
 	};
 
 /***/ },
-/* 224 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -20120,144 +20083,6 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
-
-
-/***/ },
-/* 225 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-	__webpack_require__(226);
-	var Logout = __webpack_require__(228);
-
-	var Header = React.createClass({
-	    displayName: 'Header',
-
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { className: 'header' },
-	            React.createElement(
-	                'div',
-	                { className: 'wrapper' },
-	                React.createElement(
-	                    'div',
-	                    { className: 'logo' },
-	                    'Sorry.me'
-	                ),
-	                React.createElement(
-	                    'div',
-	                    { className: 'right' },
-	                    React.createElement(Logout, null)
-	                )
-	            )
-	        );
-	    }
-	});
-	module.exports = Header;
-
-/***/ },
-/* 226 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(227);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(224)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./style.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./style.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 227 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(223)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".header{\r\n    overflow: auto;\r\n    height: 60px;\r\n    background-color: #34495e;   \r\n}\r\n.logo{\r\n    color: ghostwhite;\r\n    font-family: Pacifico;\r\n    font-size: 30px;\r\n    list-style-type: none;\r\n    cursor: default;\r\n}\r\n\r\n\r\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 228 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-	__webpack_require__(229);
-
-	var Logout = React.createClass({
-	    displayName: 'Logout',
-
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { className: 'logout' },
-	            'Logout'
-	        );
-	    }
-	});
-	module.exports = Logout;
-
-/***/ },
-/* 229 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(230);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(224)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./logout.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./logout.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 230 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(223)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".logout{\r\n    color: ghostwhite;\r\n    background-color: #1ec7a6;\r\n    height: 40px;\r\n    width: 80px;\r\n    margin: 10px;\r\n    border-radius: 5px;\r\n    text-align: center;\r\n    font-size: 20px;\r\n    line-height: 37px;\r\n    cursor: pointer; \r\n}", ""]);
-
-	// exports
 
 
 /***/ }

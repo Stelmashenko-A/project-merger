@@ -67,6 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="package.json" />
+    <Content Include=".babelrc" />
+    <Content Include="browser-bundle.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,7 +78,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="browser-bundle.js" />
+    <Content Include="bundle.js" />
+    <Content Include="index.html" />
+    <None Include="index.jsx" />
+    <Content Include="style.css" />
     <Content Include="Web.config" />
+    <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
